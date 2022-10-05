@@ -494,12 +494,13 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
-    visibility: hidden;
+    visibility: hidden;   
 }
 
 .modal {
@@ -509,20 +510,26 @@ body {
     transform: translate(-50%, -50%);
     width: 528px;
     height: 581px;
-    background-color: #fff;
+    background-color: var(--secondery-color-text);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
+    border-radius: 4px;    
 }
 
-.close-icon {
+.button-closed{
     margin: 8px;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
     position: absolute;
+    width: 30px;
+    height: 30px;
     top: 0;
     right: 0;
-
+    background-color: var(--main-bg-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
-
-.close-icon:active {}
 
 .button.container {
     padding-bottom: 50px;
@@ -611,7 +618,8 @@ body {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.portfolio-card-block:hover .portfolio-card-images::before {
+.portfolio-card-block:hover .portfolio-card-images::before,
+.portfolio-card-block:focus .portfolio-card-images::before {
     transform: translateY(0);
 }
 
